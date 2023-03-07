@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script type="text/javascript" src="../dist/picker.js"></script>
+
+  </head>
+  <body>
+    <input type="text" id="testfield" />
+    <button id="testbutton" onclick="picker.toggle()">Toggle picker</button>
+  </body>
+  <script type="text/javascript">
+    var picker=new EmojiPicker(document.getElementById('testbutton'), (emoji) => {
+      console.log('on choose', emoji);
+      document.getElementById('testfield').value = emoji.char;
+    }, 'en', ['grinning', 'relaxed']);
+    //picker.show();
+  </script>
+</html>
